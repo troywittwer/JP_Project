@@ -9,6 +9,19 @@ abstract class Product implements Item{
   private String name;
   private int currentProductionNumber;
 
+  Product(){
+    serialNumber = 0;
+    manufacturer = "";
+    manufacturedOn = new Date();
+    name = "";
+    currentProductionNumber = 0;
+  }
+
+  Product(String name, int currentProductionNumber){
+    this.name = name;
+    serialNumber = currentProductionNumber;
+  }
+
   public void setProductionNumber(int currentProductionNumber){
     this.currentProductionNumber = currentProductionNumber;
   }
