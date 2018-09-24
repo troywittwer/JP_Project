@@ -11,7 +11,7 @@
 
 package JP_Project;
 
-public class enumTester {
+public class DemoEnum {
   public static void main(String[] args){
     for (ItemType i : ItemType.values()){
       System.out.printf("The item type is %s and the value is %s\n", i, i.getValue());
