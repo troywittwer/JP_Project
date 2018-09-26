@@ -21,23 +21,22 @@ abstract class Product implements Item{
   private String manufacturer;
   private Date manufacturedOn;
   private String name;
-  private int currentProductionNumber;
+  private static int currentProductionNumber = 1;
 
   Product(){
-    serialNumber = 0;
+    serialNumber = currentProductionNumber++;
     manufacturer = "";
     manufacturedOn = new Date();
     name = "";
-    currentProductionNumber = 0;
   }
 
-  Product(String name, int currentProductionNumber){
+  Product(String name){
     this.name = name;
-    serialNumber = currentProductionNumber;
+    serialNumber = currentProductionNumber++;
   }
 
-  public void setProductionNumber(int currentProductionNumber){
-    this.currentProductionNumber = currentProductionNumber;
+  public void setProductionNumber(int currProductionNumber){
+    currentProductionNumber = currProductionNumber;
   }
 
   public void setName(String name){
