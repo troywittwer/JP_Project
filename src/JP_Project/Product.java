@@ -16,50 +16,99 @@ package JP_Project;
 
 import java.util.Date;
 
-abstract class Product implements Item{
+public abstract class Product implements Item {
+
   private int serialNumber;
   private String manufacturer;
   private Date manufacturedOn;
   private String name;
-  private static int currentProductionNumber = 1;
 
-  Product(){
+  private int currentProductionNumber;
+
+  Product() {
     serialNumber = currentProductionNumber++;
     manufacturer = "";
     manufacturedOn = new Date();
     name = "";
   }
 
-  Product(String name){
+  Product(String name) {
     this.name = name;
     serialNumber = currentProductionNumber++;
+    manufacturedOn = new Date();
+      /*
+        instructions did not specify assigning
+        a value to manufacturer, so manufacturer
+        will receive the value from the Item interface
+      */
   }
 
-  public void setProductionNumber(int currProductionNumber){
+  /**
+   * Produces a new production number to base serial numbers off of.
+   *
+   * @param currProductionNumber the new number to base serial numbers off of
+   */
+  public void setProductionNumber(int currProductionNumber) {
     currentProductionNumber = currProductionNumber;
   }
 
-  public void setName(String name){
+  /**
+   * Assigns a new name to a product based on the user's parameter.
+   *
+   * @param name the new name of a product
+   */
+  public void setName(String name) {
     this.name = name;
   }
 
-  public String getName(){
+  /**
+   * Allows user to retrieve the name of a product
+   *
+   * @return returns the name of the product.
+   */
+  public String getName() {
     return name;
   }
 
-  public Date getManufacturedOn(){
+  /**
+   * Allows user to retrieve the date a product was created on.
+   *
+   * @return returns the date the product was first initialized
+   */
+  public Date getManufacturedOn() {
     return manufacturedOn;
   }
 
-  public int getSerialNumber(){
+  /**
+   * Allows user to retrieve the serial number of the product
+   *
+   * @return returns the serial number of the product
+   */
+  public int getSerialNumber() {
     return serialNumber;
   }
 
+
+  /**
+   * Allows user to override the toString method to print out information relevant to this class The
+   * format of this String will be as follows:
+   * ---------------------------------------------
+   *  Manufacturer    : OracleProduction
+   *  Serial Number   : <serial number value>
+   *  Date            : <date and time product was created>
+   *  Name            : <name of product>
+   *  ---------------------------------------------
+   * Since the Manufacturer was never initialized, it will take the value held in the implemented
+   * Item class's manufacturer String variable.
+   *
+   * @return returns four lines of output involving manufacturer, serial number, date created, and
+   * product name
+   */
   @Override
-  public String toString(){
-    return "Manufacturer\t:\t" + manufacturer +
-        "\nSerial Number\t:\t" + serialNumber +
-        "\nDate\t:\t" + manufacturedOn +
-        "\nName\t:\t" + name;
+  public String toString() {
+    return "Manufacturer\t: " + manufacturer +
+        "\nSerial Number\t: " + serialNumber +
+        "\nDate\t\t: " + manufacturedOn +
+        "\nName\t\t: " + name;
   }
 }

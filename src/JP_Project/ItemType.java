@@ -6,26 +6,26 @@ holds the value used to indicate an item type object.
 package JP_Project;
 
 public enum ItemType {
-  AU("Audio"),
-  VI("Visual"),
-  AM("AudioMobile"),
-  VM("VisualMobile");
+  Audio("AU"),
+  Visual("VI"),
+  AudioMobile("AM"),
+  VisualMobile("VM");
 
-  private String value;
+  private String code;
 
   ItemType(){
-    value = "";
+    code = "";
   }
 
-  ItemType(String itemType) {
-    this.value = itemType;
+  ItemType(String code) {
+    this.code = code;
   }
 
-  public void setValue(String itemType){
-    this.value = itemType;
+  public void setValue(String code){
+    this.code = code;
   }
 
   public String getValue(){
-    return value;
+    return code;
   }
 }
