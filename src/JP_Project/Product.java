@@ -99,11 +99,8 @@ public abstract class Product implements Item {
 
   /**
    * Allows user to override the toString method to print out information relevant to this class The
-   * format of this String will be as follows: ---------------------------------------------
-   * Manufacturer    : OracleProduction Serial Number   : <serial number value> Date            :
-   * <date and time product was created> Name            : <name of product>
-   * --------------------------------------------- Since the Manufacturer was never initialized, it
-   * will take the value held in the implemented Item class's manufacturer String variable.
+   * Since the Manufacturer was never initialized, it will be commented out to force the toString
+   * to take the value held in the implemented Item class's manufacturer String object.
    *
    * @return returns four lines of output involving manufacturer, serial number, date created, and
    * product name
