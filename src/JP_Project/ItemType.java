@@ -14,7 +14,11 @@ public enum ItemType {
   AudioMobile("AM"),
   VisualMobile("VM");
 
-  private String code;
+  /*
+  Changed the access modifier of String object "code" from private to public because the segment
+  of code being used to test the program is written in a way that requires a public access modifier.
+   */
+  public String code;
 
   ItemType() {
     code = "";

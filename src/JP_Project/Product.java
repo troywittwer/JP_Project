@@ -22,15 +22,20 @@ import java.util.Date;
 public abstract class Product implements Item {
 
   private int serialNumber;
-  private String manufacturer;
+  //private String manufacturer; // Commented out manufacturer because it was returning null
   private Date manufacturedOn;
   private String name;
 
-  private int currentProductionNumber;
+  /*
+  Changed currentProductionNumber to a static variable to allow the variable to update per
+  iteration of an object's creation. I could have set the initial value to 1, but wasn't sure
+  if 0 was an unacceptable serial number.
+   */
+  private static int currentProductionNumber;
 
   Product() {
     serialNumber = currentProductionNumber++;
-    manufacturer = "";
+    //manufacturer = ""; // Commented out manufacturer because it was returning null.
     manufacturedOn = new Date();
     name = "";
   }
@@ -78,7 +83,7 @@ public abstract class Product implements Item {
    *
    * @return returns the date the product was first initialized
    */
-  public Date getManufacturedOn() {
+  public Date getManufactureDate() {
     return manufacturedOn;
   }
 
