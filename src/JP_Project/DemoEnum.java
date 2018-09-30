@@ -10,6 +10,10 @@
   but it didn't seem to be necessary for this project. I didn't realize the printf %s substitute
   could return a String value as well as an object type, but I guess that makes sense seeing as
   a String literal is just a reference, as well.
+
+  The for loop used in this class was based off of the planet example from Oracle's enum explanation
+
+  https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html
  */
 
 package JP_Project;
