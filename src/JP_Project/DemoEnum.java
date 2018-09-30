@@ -1,4 +1,7 @@
 /*
+  Created by Troy Wittwer
+  9-29-2018
+
   This class is only used to test the enum class to make sure I'm understanding it correctly.
   I've mimiced the functionality of the Planet example class to create a for loop spanning for
   the number of values listed in the ItemType enum class.
@@ -12,8 +15,9 @@
 package JP_Project;
 
 public class DemoEnum {
-  public static void main(String[] args){
-    for (ItemType i : ItemType.values()){
+
+  public static void main(String[] args) {
+    for (ItemType i : ItemType.values()) {
       System.out.printf("The item type is %s and the code is %s\n", i, i.getValue());
     }
 

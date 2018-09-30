@@ -1,4 +1,7 @@
 /*
+  Made by Troy Wittwer
+  Date of comment: 9-29-2018
+
 The Product class contains five private variables:
   1.) serialNumber - this may need to be a static variable since no item should have the same
       serial number. It receives a value from a constructor.
@@ -91,15 +94,11 @@ public abstract class Product implements Item {
 
   /**
    * Allows user to override the toString method to print out information relevant to this class The
-   * format of this String will be as follows:
-   * ---------------------------------------------
-   *  Manufacturer    : OracleProduction
-   *  Serial Number   : <serial number value>
-   *  Date            : <date and time product was created>
-   *  Name            : <name of product>
-   *  ---------------------------------------------
-   * Since the Manufacturer was never initialized, it will take the value held in the implemented
-   * Item class's manufacturer String variable.
+   * format of this String will be as follows: ---------------------------------------------
+   * Manufacturer    : OracleProduction Serial Number   : <serial number value> Date            :
+   * <date and time product was created> Name            : <name of product>
+   * --------------------------------------------- Since the Manufacturer was never initialized, it
+   * will take the value held in the implemented Item class's manufacturer String variable.
    *
    * @return returns four lines of output involving manufacturer, serial number, date created, and
    * product name

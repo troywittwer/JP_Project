@@ -1,4 +1,7 @@
 /*
+Created by Troy Wittwer
+9-29-2018
+
 This enum class establishes the four item type values. Only contains one variable, value, which
 holds the value used to indicate an item type object.
  */
@@ -13,7 +16,7 @@ public enum ItemType {
 
   private String code;
 
-  ItemType(){
+  ItemType() {
     code = "";
   }
 
@@ -21,11 +24,11 @@ public enum ItemType {
     this.code = code;
   }
 
-  public void setValue(String code){
+  public void setValue(String code) {
     this.code = code;
   }
 
-  public String getValue(){
+  public String getValue() {
     return code;
   }
 }
