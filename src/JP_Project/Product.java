@@ -22,7 +22,7 @@ import java.util.Date;
 public abstract class Product implements Item {
 
   private int serialNumber;
-  //private String manufacturer; // Commented out manufacturer because it was returning null
+  private String manufacturer;
   private Date manufacturedOn;
   private String name;
 
@@ -35,7 +35,7 @@ public abstract class Product implements Item {
 
   Product() {
     serialNumber = currentProductionNumber++;
-    //manufacturer = ""; // Commented out manufacturer because it was returning null.
+    manufacturer = Item.manufacturer;
     manufacturedOn = new Date();
     name = "";
   }
@@ -44,11 +44,7 @@ public abstract class Product implements Item {
     this.name = name;
     serialNumber = currentProductionNumber++;
     manufacturedOn = new Date();
-      /*
-        instructions did not specify assigning
-        a value to manufacturer, so manufacturer
-        will receive the value from the Item interface
-      */
+    manufacturer = Item.manufacturer;
   }
 
   /**
@@ -107,9 +103,9 @@ public abstract class Product implements Item {
    */
   @Override
   public String toString() {
-    return "Manufacturer\t: " + manufacturer +
-        "\nSerial Number\t: " + serialNumber +
-        "\nDate\t\t: " + manufacturedOn +
-        "\nName\t\t: " + name;
+    return "Manufacturer  : " + manufacturer +
+        "\nSerial Number : " + serialNumber +
+        "\nDate          : " + manufacturedOn +
+        "\nName          : " + name;
   }
 }
