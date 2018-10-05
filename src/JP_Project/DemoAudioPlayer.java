@@ -6,7 +6,7 @@ public class DemoAudioPlayer {
     AudioPlayer audioPlay2 = new AudioPlayer("AU", "MP3");
 
     System.out.println(audioPlay1 + "\n");
-    System.out.println(audioPlay2 + "\n");
+    System.out.println(audioPlay2 + "\n\n");
 
     audioPlay2.play();
     audioPlay2.stop();
