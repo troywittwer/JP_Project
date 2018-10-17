@@ -6,12 +6,13 @@ public class MoviePlayer extends Product implements MultimediaControl {
   MonitorType monitorType;
 
   MoviePlayer() {
+    super("VI");
     screen = new Screen();
     monitorType = MonitorType.LED;
   }
 
   MoviePlayer(String monitorType, String resolution, int refreshrate, int responsetime) {
-    super(monitorType);
+    super("VI");
     screen = new Screen(resolution, refreshrate, responsetime);
     //this.monitorType = new MonitorType(monitorType);
     if (monitorType.equals("LED"))
@@ -40,6 +41,6 @@ public class MoviePlayer extends Product implements MultimediaControl {
 
   @Override
   public String toString() {
-    return screen.toString() + "\nMonitor Type  : " + monitorType;
+    return super.toString() + "\n" + screen.toString() + "\nMonitor Type        : " + monitorType;
   }
 }

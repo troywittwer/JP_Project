@@ -103,9 +103,9 @@ public abstract class Product implements Item {
    */
   @Override
   public String toString() {
-    return "Manufacturer  : " + manufacturer +
-        "\nSerial Number : " + serialNumber +
-        "\nDate          : " + manufacturedOn +
-        "\nName          : " + name;
+    return "Manufacturer        : " + manufacturer +
+        "\nSerial Number       : " + serialNumber +
+        "\nDate                : " + manufacturedOn +
+        "\nName                : " + name;
   }
 }
