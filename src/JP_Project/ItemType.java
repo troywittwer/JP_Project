@@ -9,10 +9,10 @@ holds the value used to indicate an item type object.
 package JP_Project;
 
 public enum ItemType {
-  Audio("AU"),
-  Visual("VI"),
-  AudioMobile("AM"),
-  VisualMobile("VM");
+  AUDIO("AU"),
+  VISUAL("VI"),
+  AUDIO_MOBILE("AM"),
+  VISUAL_MOBILE("VM");
 
   /*
   Changed the access modifier of String object "code" from private to public because the segment

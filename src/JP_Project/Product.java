@@ -31,7 +31,7 @@ public abstract class Product implements Item {
   iteration of an object's creation. I could have set the initial value to 1, but wasn't sure
   if 0 was an unacceptable serial number.
    */
-  private static int currentProductionNumber;
+  private static int currentProductionNumber = 1;
 
   Product() {
     serialNumber = currentProductionNumber++;
@@ -103,9 +103,9 @@ public abstract class Product implements Item {
    */
   @Override
   public String toString() {
-    return "Manufacturer        : " + manufacturer +
-        "\nSerial Number       : " + serialNumber +
-        "\nDate                : " + manufacturedOn +
-        "\nName                : " + name;
+    return "Manufacturer : " + manufacturer +
+        "\nSerial Number : " + serialNumber +
+        "\nDate : " + manufacturedOn +
+        "\nName : " + name;
   }
 }
