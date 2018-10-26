@@ -19,7 +19,7 @@ package JP_Project;
 
 import java.util.Date;
 
-public abstract class Product implements Item, Comparable<Product> {
+public class Product implements Item, Comparable<Product> {
 
   private int serialNumber;
   private String manufacturer;

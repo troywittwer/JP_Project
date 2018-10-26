@@ -1,8 +1,8 @@
 package JP_Project;
 
 public enum MonitorType {
-  LCD("Good"),
-  LED("Bad");
+  LCD("LCD"),
+  LED("LED");
 
   public String code;
 
