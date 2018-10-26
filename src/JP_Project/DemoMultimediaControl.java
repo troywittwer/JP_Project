@@ -1,13 +1,17 @@
 package JP_Project;
 
 public class DemoMultimediaControl{
-  public static void main(String[]args){
+  public static void testPlayer(){
     AudioPlayer ap1 = new AudioPlayer();
-    AudioPlayer ap2 = new AudioPlayer("AU", "MP3");
-
     MoviePlayer mp1 = new MoviePlayer();
-    MoviePlayer mp2 = new MoviePlayer("LED", "1920x1280", 8, 60);
 
-    System.out.println(ap1 + "\n\n" + ap2 + "\n\n\n" + mp1 + "\n\n" + mp2);
+    ap1.next();
+    ap1.play();
+    ap1.previous();
+    ap1.stop();
+    mp1.next();
+    mp1.play();
+    mp1.previous();
+    mp1.stop();
   }
 }

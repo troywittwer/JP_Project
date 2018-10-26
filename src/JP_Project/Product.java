@@ -19,7 +19,7 @@ package JP_Project;
 
 import java.util.Date;
 
-public abstract class Product implements Item {
+public abstract class Product implements Item, Comparable<Product> {
 
   private int serialNumber;
   private String manufacturer;
@@ -94,9 +94,25 @@ public abstract class Product implements Item {
 
 
   /**
+   * Allows the user to compare two objects (that are extending the Product class)
+   *
+   * @param prod the class object being compared is casted as a product object.
+   * @return returns an integer value, based on whether the first different letter is greater than
+   * or less than the letter it's being compared to
+   */
+  public int compareTo(Product prod) {
+    if (name.equals(prod.getName())) {
+      return 0;
+    } else {
+      return name.compareTo(prod.getName());
+    }
+  }
+
+
+  /**
    * Allows user to override the toString method to print out information relevant to this class The
-   * Since the Manufacturer was never initialized, it will be commented out to force the toString
-   * to take the value held in the implemented Item class's manufacturer String object.
+   * Since the Manufacturer was never initialized, it will be commented out to force the toString to
+   * take the value held in the implemented Item class's manufacturer String object.
    *
    * @return returns four lines of output involving manufacturer, serial number, date created, and
    * product name

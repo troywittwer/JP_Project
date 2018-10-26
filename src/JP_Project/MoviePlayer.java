@@ -6,41 +6,36 @@ public class MoviePlayer extends Product implements MultimediaControl {
   MonitorType monitorType;
 
   MoviePlayer() {
-    super("VI");
+    super("Generic");
     screen = new Screen();
     monitorType = MonitorType.LED;
   }
 
-  MoviePlayer(String monitorType, String resolution, int refreshrate, int responsetime) {
-    super("VI");
+  MoviePlayer(String name, MonitorType monitorType, String resolution, int refreshrate, int responsetime) {
+    super(name);
     screen = new Screen(resolution, refreshrate, responsetime);
     //this.monitorType = new MonitorType(monitorType);
-    if (monitorType.equals("LED"))
-      this.monitorType = MonitorType.LED;
-    else if (monitorType.equals("LCD"))
-      this.monitorType = MonitorType.LCD;
-    else
-      this.monitorType = MonitorType.LED;
+    this.monitorType = monitorType;
   }
 
   public void play() {
-    System.out.println("Playing");
+    System.out.println("Playing movie");
   }
 
   public void stop() {
-    System.out.println("Stopping");
+    System.out.println("Stopping movie");
   }
 
   public void previous() {
-    System.out.println("Previous");
+    System.out.println("Previous movie");
   }
 
   public void next() {
-    System.out.println("Next");
+    System.out.println("Next movie");
   }
 
   @Override
   public String toString() {
-    return super.toString() + "\n" + screen.toString() + "\nMonitor Type        : " + monitorType;
+    return super.toString() + "\n" + screen.toString() + "\nMonitor Type : " + monitorType;
   }
 }
