@@ -25,6 +25,6 @@ public class DemoEnum {
       System.out.printf("The item type is %s and the code is %s\n", i, i.getValue());
     }
 
-    System.out.println(ItemType.Audio);
+    System.out.println(ItemType.AUDIO);
   }
 }
