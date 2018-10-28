@@ -11,7 +11,9 @@ public class Main {
     // Write one line of code to create an ArrayList of products
     ArrayList<Product> arrProds = new ArrayList<Product>();
 
-    // Write one line of code to call testCollection and assign the result to the ArrayList
+    /**
+     * arrProds is being assigned the address of the ArrayList returned from testCollection()
+     */
     arrProds = testCollection();
 
     // Write one line of code to sort the ArrayList
@@ -22,13 +24,18 @@ public class Main {
 
   }
 
-  // Step 15
-  // Complete the header for the testCollection method here
+  /**
+   * I was originally going to pass the address of the ArrayList created in the main method and
+   * assign it values rather than setting the address equal to the ArrayList object created in the
+   * testCollection method. My version wouldn't have needed a second ArrayList created, but the
+   * repl.it was having an issue, so I had to create the ArrayList object in the testCollection
+   * method anyway.
+   */
 
   public static ArrayList<Product> testCollection() {
 
-    AudioPlayer a1 = new AudioPlayer("iPod Mini","MP3");
-    AudioPlayer a2 = new AudioPlayer("Walkman","WAV ");
+    AudioPlayer a1 = new AudioPlayer("iPod Mini", "MP3");
+    AudioPlayer a2 = new AudioPlayer("Walkman", "WAV ");
     MoviePlayer m1 = new MoviePlayer("DBPOWER MK101",
         new Screen(" 720x480", 40, 22), MonitorType.LCD);
     MoviePlayer m2 = new MoviePlayer("Pyle PDV156BK",
@@ -36,6 +43,7 @@ public class Main {
 
     // Write one line of code here to create the collection
     ArrayList<Product> products = new ArrayList<Product>();
+
     products.add(a1);
     products.add(a2);
     products.add(m1);
@@ -43,10 +51,12 @@ public class Main {
     return products;
   }
 
-  // Step 16
-  // Create print method here
-  public static void print(ArrayList<Product> arrProds){
-    for (Product elem : arrProds){
+  /**
+   * The print method simply runs through the contents of the ArrayList object passed as an argument
+   * and prints each index on a separate line.
+   */
+  public static void print(ArrayList<Product> arrProds) {
+    for (Product elem : arrProds) {
       System.out.println(elem);
     }
   }
