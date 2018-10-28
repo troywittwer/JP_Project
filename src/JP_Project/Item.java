@@ -11,6 +11,12 @@ package JP_Project;
 
 import java.util.Date;
 
+/**
+ * The Item interface is implemented by the Product class. It is used to hold the manufacturer and
+ * provide a means modify / retrieve item information such as the name of the item, production
+ * number, manufacture date, and serial number
+ */
+
 public interface Item {
 
   final String manufacturer = "OracleProduction";

@@ -28,10 +28,17 @@ public enum ItemType {
     this.code = code;
   }
 
+  /**
+   * Allows user to set the short-hand value of their item type. If it matches one of the four enum
+   * types, that item type will be assigned as an enum to said item
+   */
   public void setValue(String code) {
     this.code = code;
   }
 
+  /**
+   * This would return a short-hand string representation of each itemtype (AU, VI, AM, or VM)
+   */
   public String getValue() {
     return code;
   }

@@ -28,8 +28,7 @@ public class Product implements Item, Comparable<Product> {
 
   /*
   Changed currentProductionNumber to a static variable to allow the variable to update per
-  iteration of an object's creation. I could have set the initial value to 1, but wasn't sure
-  if 0 was an unacceptable serial number.
+  iteration of an object's creation.
    */
   private static int currentProductionNumber = 1;
 
