@@ -100,11 +100,7 @@ public class Product implements Item, Comparable<Product> {
    * or less than the letter it's being compared to
    */
   public int compareTo(Product prod) {
-    if (name.equals(prod.getName())) {
-      return 0;
-    } else {
       return name.compareTo(prod.getName());
-    }
   }
 
 

@@ -54,6 +54,8 @@ public class Main {
   /**
    * The print method simply runs through the contents of the ArrayList object passed as an argument
    * and prints each index on a separate line.
+   *
+   * This print method should work as generic.
    */
   public static void print(ArrayList<Product> arrProds) {
     for (Product elem : arrProds) {
