@@ -1,9 +1,7 @@
 /**
- * Created by Troy Wittwer
- * Date: 11/02/2018
+ * Created by Troy Wittwer Date: 11/02/2018
  *
- * Professor Vanselow
- * COP 3003, CRN 80601
+ * Professor Vanselow COP 3003, CRN 80601
  */
 package JP_Project;
 
@@ -16,6 +14,7 @@ public class EmployeeInfo {
   private String code; // employee's first initial & last name
   private String deptId;
   //private Pattern p; // pattern will be as follows: [A-Z][a-z]{3}[0-9]{2}
+  //private Scanner in;
 
   /**
    * The setName method is called before the createEmployeeCode method because setName begins a
@@ -41,7 +40,9 @@ public class EmployeeInfo {
     return code;
   }
 
-  public String getDeptId(){ return deptId; }
+  public String getDeptId() {
+    return deptId;
+  }
 
   //private String getId(){ return }
 
@@ -90,19 +91,48 @@ public class EmployeeInfo {
     return nameString;
   }
 
-  private void setDeptId(Scanner in, Pattern p){
+  /**
+   * setDeptId works similarly to setName. It retrieves a String object from a get method through
+   * use of a Scanner. The Scanner object isn't used by the setDeptId method, it just requires
+   * Scanner as a parameter so that it can be passed down to getDeptId. This technically isn't
+   * necessary, the Scanner object could have been declared as a private class variable and then it
+   * wouldn't need to be added as a parameter. However, the instructions stated the Scanner object
+   * needed to be declared in the constructor, so I went ahead and did so. The instructions may have
+   * meant to say "instantiated in the constructor" instead.
+   *
+   * @param in the Scanner object declared in the constructor
+   * @param p the pattern that must be followed, will be used by validId
+   */
+  private void setDeptId(Scanner in, Pattern p) {
     String id = getId(in);
 
     deptId = validId(id, p) ? id : "None01";
   }
 
-  private String getId(Scanner in){
+  /**
+   * Allows user to submit a String representing the department id.
+   *
+   * @param in the Scanner object declared in the constructor
+   * @return returns a String object, which would ideally be a 6 character String consisting of a
+   * capital letter as the first character, three lowercase letters as the next three characters,
+   * and two numbers as the last two characters. This combination would successfully pass the
+   * requirements for a valid id, but anything can technically be passed.
+   */
+  private String getId(Scanner in) {
     System.out.print("Please enter your ID: ");
     String id = in.next();
     return id;
   }
 
-  private boolean validId(String id, Pattern p){
+  /**
+   * Determines whether or not the department ID submitted by the user is valid.
+   *
+   * @param id the String entered by the user from the getDeptId method
+   * @param p the pattern an ID must follow in order to be considered valid
+   * @return returns a true or false boolean depending on whether or not the submitted ID is
+   * considered valid
+   */
+  private boolean validId(String id, Pattern p) {
     return p.matches(p.pattern(), id);
   }
 
@@ -126,7 +156,7 @@ public class EmployeeInfo {
   }
 
   @Override
-  public String toString(){
+  public String toString() {
     return "Code : " + code + "\nDepartment ID : " + deptId;
   }
 }
