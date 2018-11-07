@@ -8,11 +8,14 @@
 package JP_Project;
 
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class EmployeeInfo {
 
   private StringBuilder name; // employee's name
   private String code; // employee's first initial & last name
+  private String deptId;
+  //private Pattern p; // pattern will be as follows: [A-Z][a-z]{3}[0-9]{2}
 
   /**
    * The setName method is called before the createEmployeeCode method because setName begins a
@@ -21,8 +24,13 @@ public class EmployeeInfo {
    * employee code
    */
   EmployeeInfo() {
-    setName();
+    Scanner in = new Scanner(System.in);
+    Pattern p = Pattern.compile("[A-Z][a-z]{3}[0-9]{2}");
+    setName(in);
+    setDeptId(in, p);
     createEmployeeCode(name);
+
+    in.close();
   }
 
   public StringBuilder getName() {
@@ -33,12 +41,16 @@ public class EmployeeInfo {
     return code;
   }
 
+  public String getDeptId(){ return deptId; }
+
+  //private String getId(){ return }
+
   /**
    * setName method instantiates the name StringBuilder object. This is done by retrieving the value
    * returned by the inputName method.
    */
-  private void setName() {
-    String nameString = inputName();
+  private void setName(Scanner in) {
+    String nameString = inputName(in);
     name = new StringBuilder(nameString);
   }
 
@@ -67,15 +79,31 @@ public class EmployeeInfo {
    * by the user is stored in a String object, that String literal is simply returned to setName
    * method that called it.
    */
-  private String inputName() {
+  private String inputName(Scanner in) {
     String nameString;
 
-    Scanner in = new Scanner(System.in);
+    //Scanner in = new Scanner(System.in);
     System.out.print("Please enter your first and last name: ");
     nameString = in.nextLine();
 
     in.close();
     return nameString;
+  }
+
+  private void setDeptId(Scanner in, Pattern p){
+    String id = getId(in);
+
+    deptId = validId(id, p) ? id : "None01";
+  }
+
+  private String getId(Scanner in){
+    System.out.print("Please enter your ID: ");
+    String id = in.next();
+    return id;
+  }
+
+  private boolean validId(String id, Pattern p){
+    return p.matches(p.pattern(), id);
   }
 
   /**
@@ -95,5 +123,10 @@ public class EmployeeInfo {
     } else {
       return false;
     }
+  }
+
+  @Override
+  public String toString(){
+    return "Code : " + code + "\nDepartment ID : " + deptId;
   }
 }
