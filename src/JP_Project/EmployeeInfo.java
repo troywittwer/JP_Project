@@ -13,8 +13,6 @@ public class EmployeeInfo {
   private StringBuilder name; // employee's name
   private String code; // employee's first initial & last name
   private String deptId;
-  //private Pattern p; // pattern will be as follows: [A-Z][a-z]{3}[0-9]{2}
-  //private Scanner in;
 
   /**
    * The setName method is called before the createEmployeeCode method because setName begins a
@@ -83,11 +81,9 @@ public class EmployeeInfo {
   private String inputName(Scanner in) {
     String nameString;
 
-    //Scanner in = new Scanner(System.in);
     System.out.print("Please enter your first and last name: ");
     nameString = in.nextLine();
 
-    in.close();
     return nameString;
   }
 
@@ -105,6 +101,7 @@ public class EmployeeInfo {
    */
   private void setDeptId(Scanner in, Pattern p) {
     String id = getId(in);
+    id = reverseString(id);
 
     deptId = validId(id, p) ? id : "None01";
   }
@@ -119,7 +116,7 @@ public class EmployeeInfo {
    * requirements for a valid id, but anything can technically be passed.
    */
   private String getId(Scanner in) {
-    System.out.print("Please enter your ID: ");
+    System.out.print("Please enter the department ID: ");
     String id = in.next();
     return id;
   }
@@ -155,8 +152,18 @@ public class EmployeeInfo {
     }
   }
 
+  public String reverseString(String id){
+    String rID = "";
+
+    for (int i = id.length(); i >= 0; i--){
+      rID += id.charAt(i);
+    }
+
+    return rID;
+  }
+
   @Override
   public String toString() {
-    return "Code : " + code + "\nDepartment ID : " + deptId;
+    return "Employee Code : " + code + "\nDepartment Number : " + deptId;
   }
 }

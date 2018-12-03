@@ -1,3 +1,32 @@
+/**
+ * This class will be restructured to perform the final step, step 23.
+ * This class must perform the following:
+ *
+ * 1.) Allow user:
+ *     a.) Add a new product
+ *     b.) Specify how many items of that product should be created.
+ *
+ * 2.) Program will then:
+ *     a.) Create these items
+ *     b.) Store them in a collection.
+ *
+ * 3.) New products can be added at any time
+ *     a.) Menu option
+ *
+ * 4.) Production statistics can be displayed
+ *     a.) Menu option
+ *     b.) Total items produced
+ *     c.) Number of each item
+ *     d.) Number of unique products created
+ *
+ * 5.) Operator will decide when to stop the program
+ *     a.) Menu option
+ *
+ * 6.) Program will be menu driven. Can be either:
+ *     a.) Console program, or
+ *     b.) Richer graphical user interface
+ */
+
 package JP_Project;
 
 import java.util.ArrayList;
