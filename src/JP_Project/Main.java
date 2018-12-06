@@ -22,6 +22,7 @@ package JP_Project;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -65,9 +66,9 @@ public class Main {
           in.close();
           break;
 
-        // User enters a number other than 3.
+        // User enters a number other than 1-3
         default:
-          System.out.println(userOption + " is not a valid option. Returning to menu.\n");
+          System.out.println("Not a valid option. Returning to menu.\n");
           break;
       }
     } while (userOption != 3);
@@ -84,13 +85,24 @@ public class Main {
    * @return int representing user's choice of menu option.
    */
   private static int menu(Scanner in) {
+    int userOption = -1; // returned if user enters something other than a whole integer value.
+
     System.out.println("1.) Add a product");
     System.out.println("2.) View product statistics");
     System.out.println("3.) Exit application");
     System.out.print("Please enter one of the above options: ");
-    int userOption = in.nextInt();
-    // Need to perform a nextLine action since nextInt leaves the newline character.
-    in.nextLine();
+
+    try{
+      userOption = in.nextInt();
+      // Need to perform a nextLine action since nextInt leaves the newline character.
+      in.nextLine();
+    }catch(NumberFormatException e){
+      System.out.println("Number format exception.");
+    }catch(InputMismatchException e){ // in case user enters something other than a whole number.
+      System.out.println("Input must be an integer number.");
+      in.nextLine();
+    }
+
 
     return userOption;
   }
@@ -115,9 +127,19 @@ public class Main {
    */
   private static int getNumCreated(Scanner in) {
     System.out.print("How many of these items should be created: ");
-    int numCreated = in.nextInt();
-    // Need to perform a nextLine action since nextInt leaves the newline character.
-    in.nextLine();
+    int numCreated = 0;
+
+    try{
+      numCreated = in.nextInt();
+      // Need to perform a nextLine action since nextInt leaves the newline character.
+      in.nextLine();
+    } catch(InputMismatchException e){
+      // The nextLine action wasn't reached, need to redo it.
+      in.nextLine();
+      System.out.println("Please enter a whole integer.");
+      numCreated = getNumCreated(in);
+    }
+
     return numCreated;
   }
 
